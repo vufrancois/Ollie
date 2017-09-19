@@ -3,22 +3,22 @@ Week 1:
 Week Behind:
 
 Met with Company Advisor
-Conducted research on self driving cars
-Created system diagram of the industry
-Wrote User Stories
+Conducted Research on Self-Driving Cars
+Created 1st Iteration of System Diagram & Wedges of the AV industry
+Created 2 User Stories
 Sent signed CSP Agreement to Company Advisor
 
 Week Ahead:
 
-Draft and sign team contract
-Product sketches
-Develop an initial product narrative
-Initial contact with Studio Advisor
-Gather feedback on and iterate system diagrams and user stories
+Draft and Sign Team Contract
+Create 2 Product Sketches
+Develop an Initial Product Narrative
+Contact Faculty & Studio Advisor, Professor Mor & Hannah Donovan
+Gather Feedback and Iterate System Diagrams and User Stories
 
 Risks/Challenges:
 
-No clear direction yet, product sketches should help the team choose a direction
+We have no clear direction yet, but product sketches should help the eliminate the ambiguity
 
 
 Week 2:
@@ -42,7 +42,6 @@ Risks/Challenges:
 We need to dig deeper and develop a target MVP that we can begin to validate. There are certain ideas and important features that we've found from synthesizing our ideations that may not really be feasible or important to have.
 Because the self-driving car industry is still in the research and development phase, well before mass adoption will be possible, we're working under certain assumptions that could potentially hinder our ideas in terms of testing and usefulness.
 Interesting News:
-
 
 
 Week 3:
