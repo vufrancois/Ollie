@@ -1,0 +1,64 @@
+Week 1:
+
+Week Behind:
+
+Met with Company Advisor
+Conducted research on self driving cars
+Created system diagram of the industry
+Wrote User Stories
+Sent signed CSP Agreement to Company Advisor
+
+Week Ahead:
+
+Draft and sign team contract
+Product sketches
+Develop an initial product narrative
+Initial contact with Studio Advisor
+Gather feedback on and iterate system diagrams and user stories
+
+Risks/Challenges:
+
+No clear direction yet, product sketches should help the team choose a direction
+
+
+Week 2:
+
+Week Behind:
+
+Created & Submitted Internal Team Contract. It can be found here.
+Signed & Submitted Individual CSP-Agreements /w Will.
+We also had our first 2 ideation & product sketching sessions. The results for the first iteration of which can be found here, and the second, here as well.
+We've also begun crafting the first iteration of our product narrative to help steer us in the direction of creating a product that is truly a solution to the problem at hand.
+We've also iterated on the first pass of our system diagram & user stories.
+
+Week Ahead:
+
+Sprint 1 is at the end of this upcoming. It will give us an opportunity to sit down and start getting our hands dirty. We'll be creating a cohesive and shareable 3 min. presentation to share with all of our stakeholders.
+Prior to the sprint, we plan to start reaching out more to our accessible networks to gain more insight on the industry, user interviews, potential leads/inspiration, or potential pitfalls.
+With more research and knowledge, we plan to iterate on our narrative, user stories, and product sketches.
+
+Risks/Challenges:
+
+We need to dig deeper and develop a target MVP that we can begin to validate. There are certain ideas and important features that we've found from synthesizing our ideations that may not really be feasible or important to have.
+Because the self-driving car industry is still in the research and development phase, well before mass adoption will be possible, we're working under certain assumptions that could potentially hinder our ideas in terms of testing and usefulness.
+Interesting News:
+
+
+
+Week 3:
+
+Week Behind:
+
+We decided on a direction for our product and simplified our narrative.
+We created mockups for an educational game that teaches the player about the self-driving cars. The key is to have a player to build a self-driving car and help the player to understand the technology behind self-driving cars.
+We created a deck based around our narrative and mockups. Please refer to the link for the presentation slides.
+
+Week Ahead:
+
+We will be going over the feedback we received on the presentation and iterate on our narrative and mockups.
+We will be determining which features of our game we want to pursue.
+
+Risks/Challenges:
+
+Some of the game mechanics we would like to develop may be technically challenging. We will evaluate rapid development plans.
+There is a risk that we will not be able to do everything we envision. We are ready to scale back on features that prove to be too challenging.
