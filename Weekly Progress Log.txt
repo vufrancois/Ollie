@@ -83,3 +83,33 @@ Risks/Challenges:
 
   Determine which algorithm we should use to build the demo deck.
   Create the demo within limited time constraints.
+
+
+Week 5:
+
+Week Behind:
+
+  Iterated on demo deck and product narrative.
+  Received initial feedback from Crit #1.
+  Created list of interview questions & survey.
+  Interviewed 3 users and received proof of concept validations.
+  Created Crit Findings Log and User Findings Log to track progress.
+  Updated Weekly Progress Report.
+
+
+Week Ahead:
+
+  Continue to validate narrative & product idea concepts.
+  Create dynamic demo to better validate product idea.
+  Determine description, core product loop, and feature set of NCP.
+  Update Architecture Diagram.
+  Complete Peer Review Surveys.
+  Prepare for Sprint #2.
+
+
+Risks/Challenges:
+
+  Due to timeline constraints, we need to quickly focus in on user validation so we can begin building.
+  The development stack for creating a working demo is still up for debate.
+  We need to differentiate between customers and users. How will we monetize the app? Does this change its functionality?
+  
