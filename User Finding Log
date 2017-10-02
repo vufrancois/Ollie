@@ -34,3 +34,59 @@ User 1: Demographic: Tech-Savvy Cornell Tech Student
 User 2: Demographic:
 
 User 3: Demographic:
+
+Ride Sharing:
+
+1. Do you use ride-sharing apps like Uber or Lyft?
+
+2. How familiar are you with self-driving vehicles?
+
+3. What do you think about Uber's self-driving vehicle program?
+
+4. Would you ever ride in an autonomous vehicle? Why or why not?
+
+5. What would convince you to ride in a self-driving vehicles?
+
+
+General Acceptance/Ownership:
+
+1. What is your general mode of transportation?
+
+2. What do you like about it? What do you not like about it?
+
+3. What factors are important to you in regards to mobility?
+
+4. If a self-driving car could meet or excel those factors, would you use it?
+
+5. Would you ever own an autonomous vehicle?
+
+
+
+User 1:
+  Demographic: Cornell Tech Student
+
+User 2:
+  Demographic: Parent of Young Children
+
+User 3:
+  Demographic: Elderly Resident, Preferably Living Independently
+
+User 4:
+  Occupation: Pharmacist
+  Age: 26
+  Gender: F
+  Location: Chicago, IL
+
+  Ride Sharing:
+  1. Yes
+  2. A little. They are driverless cars that would make my life easier
+  3. If it brings down the cost, it is a big benefit for end users like me
+  4. Yes, if it is safe and cheap
+  5. Guaranteed safety
+
+  General Acceptance/Ownership:
+  1. Driving & ride sharing.
+  2. Can be cheaper. Sometimes drivers are wierd.
+  3. Affordability, time travelling
+  4. Yes
+  5. Yes
