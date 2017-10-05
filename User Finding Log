@@ -16,7 +16,6 @@ User Interview Questions Iteration #1:
 14. What would it take to convince you to trust self-driving cars?
 
 
-
 User 1: Demographic: Tech-Savvy Cornell Tech Student
 1.  I would consider myself very tech savvy.
 2.  Public transportation is main form of transportation considering I live in city.
@@ -67,26 +66,14 @@ User 3: Demographic: Mildly-Curious Finance Professional
 13. On a scale of 1-10, a 9. I would do it for the experience. I think it would also add to my trust level after experiencing a ride.
 14. Full functionality. If it communicated with me, opened my door, offered me a drink, and just interacted with me as if it was person. I could almost trust it more than a regular person.
 
-<<<<<<< HEAD
-User Interview Questions Iteration #2:
-1.  What is demographic and background? (Qualitative)
-2.  How often do you use ride-sharing apps like Uber or Lyft? (1-10)
-3.  How familiar are you with self-driving vehicles? (1-10)
-4.  How much would you say you trust self-driving vehicles? (1-10)
-5.  What would it take to convince you to trust self-driving vehicles?
-6.  Does understanding how self-driving vehicles work create more trust for self-driving vehicles for yourself?
-7.  If you knew _____ uses self-driving vehicles, would you be more trust for self-driving vehicles for yourself?
-8.  Show Product
-9.  Do you feel more trust of self-driving vehicles more because your _____ uses them as well? (1-10)
-10. How much would you say you trust self-driving vehicles after using this product? (1-10)
-=======
+
 User 4: Demographic: a New Yorker
 1. Pretty good.
 2. Subway and walking.
 3. Very important.
 4. I have owned a vehicle. I do not currently own one.
 5. The way it is powered. Electric or hybric.
-6. Legroom. 
+6. Legroom.
 7. Not very often. A couple times a month.
 8. Somewhat.
 9. Exciting. It's a positive thing.
@@ -95,6 +82,7 @@ User 4: Demographic: a New Yorker
 12. It would help, but I think it takes some experience before they completely trust it.
 13. When?
 14. For the vehicle to pass safety test.
+
 
 User 5: Demographic: a Pharmacist in Midwest
 1. 6
@@ -111,4 +99,16 @@ User 5: Demographic: a Pharmacist in Midwest
 12. As a first step yes
 13. Very
 14. Safety and price
->>>>>>> b2bbf7dc387adfffaa72035275bd9640d4c038e2
+
+
+User Interview Questions Iteration #2:
+1.  What is the your demographic and background? (User Profiling) (Qualitative)
+2.  On a scale of 1 to 10, how often do you use ride-sharing apps like Uber or Lyft? (User Profiling)
+3.  On a scale of 1 to 10, how familiar are you with self-driving vehicles? (User Profiling)
+4.  On a scale of 1 to 10, how much do you trust artificially intelligent machines? (Trust Clustering)
+5.  In a perfect world, let's say all of Uber/Lyft cars on the roads are self-driving vehicle. On a scale of 1 to 10, what likely are you to order a ride/use the service? (Trust Clustering)
+6.  On a scale of 1 to 10, how likely are you to order a ride for friend or loved one? (Trust Clustering)
+7.  If you knew "x, y, and z" uses self-driving vehicles, how much more likely would you be? (Validate User Needs) (Show Demo)
+8.  If you knew "x, y, and z" uses self-driving vehicles, how much more likely would you be? (Validate User Needs) (Show Demo)
+9.  On a scale of 1 to 10, how much would you say you trust self-driving vehicles after using this product? (Validate User Needs)
+10. Can envision something else that could increase your trust level for self-driving cars? (User Wants) (Conceptualize)
