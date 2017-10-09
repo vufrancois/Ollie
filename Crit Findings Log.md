@@ -1,6 +1,3 @@
-# Ollie
-Product Studio Project - Inamoto &amp; Co. / Toyota
-
 ## Crit 1 Notes:
 
 1. Focus more on why I should care. First couple of slides on benefits weren't really effective.
