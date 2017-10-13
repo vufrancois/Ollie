@@ -146,20 +146,9 @@
           content: contentString
         });
         
-        var goldStar = {
-          path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
-          fillColor: 'yellow',
-          fillOpacity: 0.8,
-          scale: 1,
-          strokeColor: 'gold',
-          strokeWeight: 14
-        };
+        
 
-        var marker = new google.maps.Marker({
-          position: {lat: 40.7484, lng: 73.9857},
-          icon: lineSymbol1,
-          map: map
-        });
+        
        
         
         // Define the symbol, using one of the predefined paths ('CIRCLE')
@@ -241,6 +230,8 @@
           anchor: new google.maps.Point(10, 25)
         };
 
+
+
         var marker2 = new google.maps.Marker({
           position: {lat: 40.7484, lng: -73.9782},
           icon: lineSymbol2,
@@ -269,7 +260,7 @@
           position: {lat: 40.755, lng: -74},
           icon: lineSymbol6,
           map: map
-        });
+        })
 
         // Create the polyline and add the symbol to it via the 'icons' property.
         var line1 = new google.maps.Polyline({
@@ -382,10 +373,11 @@
   </head>
   <body>
     <div id="info">
+      <img src="static/img/ollie_logo.png" alt="Mountain View" style="height:100% ;">
       <img src="static/img/simple-black.png" alt="Mountain View" style="height:100%;">
-      <img src="static/img/ollie_logo.png" alt="Mountain View" style="height:100% ;">
-      <img src="static/img/ollie_logo.png" alt="Mountain View" style="height:100% ;">
-      <img src="static/img/ollie_logo.png" alt="Mountain View" style="height:100% ;">
+      <img src="static/img/inamoto_logo.png" alt="Mountain View" style="height:100% ;">
+      <img src="static/img/toyota_logo.jpg" alt="Mountain View" style="height:100% ;">
+
 <!--       <h4 style="float:right;">AV in action: 435,323</h4>
  -->      
       <label style="float:right" class="switch">
@@ -397,6 +389,7 @@
     <div id="map">
             <!-- The Modal -->
     </div>
+
 
 
     <div id="myModal" class="modal">
@@ -416,7 +409,7 @@
             <br>
           </div>
           
-          <h3 style="text-align: center;"> What Ollie Sees </h3>
+          <h3 style="text-align:center; color:#fefefe;"> What Ollie Sees </h3>
           <video class="center-img" controls autoplay>
             <source src="static/img/AV-driverview1.mp4" type="video/mp4" >
             Your browser does not support HTML5 video.
