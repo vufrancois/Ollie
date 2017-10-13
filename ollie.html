@@ -1,14 +1,126 @@
 <html>
   <head>
     <style>
+      #info {
+        height: 10%;
+      }
       #map {
-        height: 100%;
+        height: 90%;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
         margin: 0;
         padding: 0;
+      }
+
+      .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+      }
+
+      /* Modal Content/Box */
+      .modal-content {
+          background-color: #DA1884;
+          margin: 15% auto; /* 15% from the top and centered */
+          padding: 20px;
+          border: 1px solid #888;
+          width: 80%; /* Could be more or less, depending on screen size */
+          border-radius: 25px;
+      }
+
+      .modal-content-text {
+          color: #fefefe;
+
+
+       }
+
+      /* The Close Button */
+      .close {
+          color: #aaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+      }
+
+      .center-img {
+        display: block;
+        margin: auto;
+      }
+
+            /* The switch - the box around the slider */
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+
+      /* Hide default HTML checkbox */
+      .switch input {display:none;}
+
+      /* The slider */
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+
+      input:checked + .slider {
+        background-color: #2196F3;
+      }
+
+      input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+      }
+
+      input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+
+      /* Rounded sliders */
+      .slider.round {
+        border-radius: 34px;
+      }
+
+      .slider.round:before {
+        border-radius: 50%;
       }
     </style>
     <script >
@@ -21,8 +133,8 @@
         
         // Create a map and center it on Manhattan.
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 100,
-          center: {lat: 40.771, lng: -73.974}
+          zoom: 1,
+          center: {lat: 41.771, lng: -73.974}
         });
         
         // Create a renderer for directions and bind it to the map.
@@ -34,55 +146,168 @@
           content: contentString
         });
         
+        var goldStar = {
+          path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
+          fillColor: 'yellow',
+          fillOpacity: 0.8,
+          scale: 1,
+          strokeColor: 'gold',
+          strokeWeight: 14
+        };
+
+        var marker = new google.maps.Marker({
+          position: {lat: 40.7484, lng: 73.9857},
+          icon: lineSymbol1,
+          map: map
+        });
+       
         
         // Define the symbol, using one of the predefined paths ('CIRCLE')
         // supplied by the Google Maps JavaScript API.
-        var lineSymbol = {
+        var lineSymbol1 = {
           path: "M17.402,0H5.643C2.526,0,0,3.467,0,6.584v34.804c0,3.116,2.526,5.644,5.643,5.644h11.759c3.116,0,5.644-2.527,5.644-5.644 V6.584C23.044,3.467,20.518,0,17.402,0z M22.057,14.188v11.665l-2.729,0.351v-4.806L22.057,14.188z M20.625,10.773 c-1.016,3.9-2.219,8.51-2.219,8.51H4.638l-2.222-8.51C2.417,10.773,11.3,7.755,20.625,10.773z M3.748,21.713v4.492l-2.73-0.349 V14.502L3.748,21.713z M1.018,37.938V27.579l2.73,0.343v8.196L1.018,37.938z M2.575,40.882l2.218-3.336h13.771l2.219,3.336H2.575z M19.328,35.805v-7.872l2.729-0.355v10.048L19.328,35.805z",
           scale: .7,
           strokeColor: "white",
           strokeWeight: .10,
           fillOpacity: 1,
-          fillColor: "#404040",
+          fillColor: "#FF6347",
           offset: "5%",
           // rotation: parseInt(heading[i]),
           anchor: new google.maps.Point(10, 25)
         };
 
+        var lineSymbol2 = {
+          path: "M17.402,0H5.643C2.526,0,0,3.467,0,6.584v34.804c0,3.116,2.526,5.644,5.643,5.644h11.759c3.116,0,5.644-2.527,5.644-5.644 V6.584C23.044,3.467,20.518,0,17.402,0z M22.057,14.188v11.665l-2.729,0.351v-4.806L22.057,14.188z M20.625,10.773 c-1.016,3.9-2.219,8.51-2.219,8.51H4.638l-2.222-8.51C2.417,10.773,11.3,7.755,20.625,10.773z M3.748,21.713v4.492l-2.73-0.349 V14.502L3.748,21.713z M1.018,37.938V27.579l2.73,0.343v8.196L1.018,37.938z M2.575,40.882l2.218-3.336h13.771l2.219,3.336H2.575z M19.328,35.805v-7.872l2.729-0.355v10.048L19.328,35.805z",
+          scale: .7,
+          strokeColor: "white",
+          strokeWeight: .10,
+          fillOpacity: 1,
+          fillColor: "#FF6347",
+          offset: "5%",
+          rotation: 208,
+          // rotation: parseInt(heading[i]),
+          anchor: new google.maps.Point(10, 25)
+        };
+
+        var lineSymbol3 = {
+          path: "M17.402,0H5.643C2.526,0,0,3.467,0,6.584v34.804c0,3.116,2.526,5.644,5.643,5.644h11.759c3.116,0,5.644-2.527,5.644-5.644 V6.584C23.044,3.467,20.518,0,17.402,0z M22.057,14.188v11.665l-2.729,0.351v-4.806L22.057,14.188z M20.625,10.773 c-1.016,3.9-2.219,8.51-2.219,8.51H4.638l-2.222-8.51C2.417,10.773,11.3,7.755,20.625,10.773z M3.748,21.713v4.492l-2.73-0.349 V14.502L3.748,21.713z M1.018,37.938V27.579l2.73,0.343v8.196L1.018,37.938z M2.575,40.882l2.218-3.336h13.771l2.219,3.336H2.575z M19.328,35.805v-7.872l2.729-0.355v10.048L19.328,35.805z",
+          scale: .7,
+          strokeColor: "white",
+          strokeWeight: .10,
+          fillOpacity: 1,
+          fillColor: "#FF6347",
+          offset: "5%",
+          rotation: 118,
+          // rotation: parseInt(heading[i]),
+          anchor: new google.maps.Point(10, 25)
+        };
+
+        var lineSymbol4 = {
+          path: "M17.402,0H5.643C2.526,0,0,3.467,0,6.584v34.804c0,3.116,2.526,5.644,5.643,5.644h11.759c3.116,0,5.644-2.527,5.644-5.644 V6.584C23.044,3.467,20.518,0,17.402,0z M22.057,14.188v11.665l-2.729,0.351v-4.806L22.057,14.188z M20.625,10.773 c-1.016,3.9-2.219,8.51-2.219,8.51H4.638l-2.222-8.51C2.417,10.773,11.3,7.755,20.625,10.773z M3.748,21.713v4.492l-2.73-0.349 V14.502L3.748,21.713z M1.018,37.938V27.579l2.73,0.343v8.196L1.018,37.938z M2.575,40.882l2.218-3.336h13.771l2.219,3.336H2.575z M19.328,35.805v-7.872l2.729-0.355v10.048L19.328,35.805z",
+          scale: .7,
+          strokeColor: "white",
+          strokeWeight: .10,
+          fillOpacity: 1,
+          fillColor: "#000000",
+          offset: "5%",
+          rotation: 28,
+          // rotation: parseInt(heading[i]),
+          anchor: new google.maps.Point(10, 25)
+        };
+
+        var lineSymbol5 = {
+          path: "M17.402,0H5.643C2.526,0,0,3.467,0,6.584v34.804c0,3.116,2.526,5.644,5.643,5.644h11.759c3.116,0,5.644-2.527,5.644-5.644 V6.584C23.044,3.467,20.518,0,17.402,0z M22.057,14.188v11.665l-2.729,0.351v-4.806L22.057,14.188z M20.625,10.773 c-1.016,3.9-2.219,8.51-2.219,8.51H4.638l-2.222-8.51C2.417,10.773,11.3,7.755,20.625,10.773z M3.748,21.713v4.492l-2.73-0.349 V14.502L3.748,21.713z M1.018,37.938V27.579l2.73,0.343v8.196L1.018,37.938z M2.575,40.882l2.218-3.336h13.771l2.219,3.336H2.575z M19.328,35.805v-7.872l2.729-0.355v10.048L19.328,35.805z",
+          scale: .7,
+          strokeColor: "white",
+          strokeWeight: .10,
+          fillOpacity: 1,
+          fillColor: "#000000",
+          offset: "5%",
+          rotation: 118,
+          // rotation: parseInt(heading[i]),
+          anchor: new google.maps.Point(10, 25)
+        };
+
+        var lineSymbol6 = {
+          path: "M17.402,0H5.643C2.526,0,0,3.467,0,6.584v34.804c0,3.116,2.526,5.644,5.643,5.644h11.759c3.116,0,5.644-2.527,5.644-5.644 V6.584C23.044,3.467,20.518,0,17.402,0z M22.057,14.188v11.665l-2.729,0.351v-4.806L22.057,14.188z M20.625,10.773 c-1.016,3.9-2.219,8.51-2.219,8.51H4.638l-2.222-8.51C2.417,10.773,11.3,7.755,20.625,10.773z M3.748,21.713v4.492l-2.73-0.349 V14.502L3.748,21.713z M1.018,37.938V27.579l2.73,0.343v8.196L1.018,37.938z M2.575,40.882l2.218-3.336h13.771l2.219,3.336H2.575z M19.328,35.805v-7.872l2.729-0.355v10.048L19.328,35.805z",
+          scale: .7,
+          strokeColor: "white",
+          strokeWeight: .10,
+          fillOpacity: 1,
+          fillColor: "#000000",
+          offset: "5%",
+          rotation: 118,
+          // rotation: parseInt(heading[i]),
+          anchor: new google.maps.Point(10, 25)
+        };
+
+        var marker2 = new google.maps.Marker({
+          position: {lat: 40.7484, lng: -73.9782},
+          icon: lineSymbol2,
+          map: map
+        });
+
+        var marker3 = new google.maps.Marker({
+          position: {lat: 40.7606, lng: -73.9782},
+          icon: lineSymbol3,
+          map: map
+        });
+
+        var marker4 = new google.maps.Marker({
+          position: {lat: 40.77, lng: -73.988},
+          icon: lineSymbol4,
+          map: map
+        });
+
+        var marker5 = new google.maps.Marker({
+          position: {lat: 40.75, lng: -73.9782},
+          icon: lineSymbol5,
+          map: map
+        });
+
+        var marker6 = new google.maps.Marker({
+          position: {lat: 40.755, lng: -74},
+          icon: lineSymbol6,
+          map: map
+        });
+
         // Create the polyline and add the symbol to it via the 'icons' property.
-        var line = new google.maps.Polyline({
+        var line1 = new google.maps.Polyline({
           path: [],
+          strokeWeight:15,
+          strokeColor: "white",
           icons: [{
-            icon: lineSymbol,
+            icon: lineSymbol1,
             offset: '100%'
           }],
           map: map
         });
+        clickPolyline(line1)
 
         var path = [];
       // Display the route between the initial start and end selections.
         calculateAndDisplayRoute(
-          directionsDisplay, directionsService, markerArray, stepDisplay, map, line, path);
+          directionsDisplay, directionsService, markerArray, stepDisplay, map, line1, path);
 
-        animateCircle(line);
-        showStats(line);
+        animateCircle(line1);
+        showStats(line1);
       }
 
       // Use the DOM setInterval() function to change the offset of the symbol
       // at fixed intervals.
-      function animateCircle(line) {
+      function animateCircle(line1) {
           var count = 0;
           window.setInterval(function() {
             count = (count + 1) % 1000000;
 
-            var icons = line.get('icons');
+            var icons = line1.get('icons');
             icons[0].offset = (count / 100) + '%';
-            line.set('icons', icons);
+            line1.set('icons', icons);
         }, 20);
       }
 
       function calculateAndDisplayRoute(directionsDisplay, directionsService,
-                                         markerArray, stepDisplay, map, line, path) {
+                                         markerArray, stepDisplay, map, line1, path) {
         // First, remove any existing markers from the map.
         for (var i = 0; i < markerArray.length; i++) {
           markerArray[i].setMap(null);
@@ -92,7 +317,7 @@
         // WALKING directions.
         directionsService.route({
           origin: "penn station, new york, ny",
-          destination: "253 West 125th Street, New York, NY",
+          destination: "Apple 5th Avenue",
           travelMode: 'DRIVING'
         }, function(response, status) {
           // Route the directions and pass the response to a function to create
@@ -101,8 +326,7 @@
             // parse waypoints
             directionsDisplay.setDirections(response);
             path = showSteps(response, markerArray, stepDisplay, map, path);
-            console.log(path);
-            line.setPath(path);
+            line1.setPath(path);
           } else {
             window.alert('Directions request failed due to ' + status);
           }
@@ -127,6 +351,8 @@
         return path
       }
 
+
+
       function attachInstructionText(stepDisplay, marker, text, map) {
         google.maps.event.addListener(marker, 'click', function() {
           // Open an info window when the marker is clicked on, containing the text
@@ -136,15 +362,69 @@
         });
       }
 
-      function showStats(line) {
+      function showStats(line1) {
         google.maps.event.add
       }
+
+      function clickPolyline(line){
+        google.maps.event.addListener(line, 'click', function() {
+          var modal = document.getElementById('myModal');
+          modal.style.display = "block";
+          // alert('you clicked polyline');
+      });
+          var close = document.getElementsByClassName("close")[0];
+            close.onclick = function() {
+                var modal = document.getElementById('myModal');
+                modal.style.display = "none";
+            }     
+   }
     </script>
   </head>
   <body>
-    <div id="map"></div>
-    <script async defer
-src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
-</script>
+    <div id="info">
+      <img src="static/img/simple-black.png" alt="Mountain View" style="height:100%;">
+      <img src="static/img/ollie_logo.png" alt="Mountain View" style="height:100% ;">
+      <img src="static/img/ollie_logo.png" alt="Mountain View" style="height:100% ;">
+      <img src="static/img/ollie_logo.png" alt="Mountain View" style="height:100% ;">
+<!--       <h4 style="float:right;">AV in action: 435,323</h4>
+ -->      
+      <label style="float:right" class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <div id="map">
+            <!-- The Modal -->
+    </div>
+
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="modal-content-text">
+            <img class="center-img" src="static/img/ollie.jpg" alt="Mountain View" style="">
+            <div style="padding-left:20%">
+              <p>ID:005</p>
+              <p>Miles Driven : 30,000</p>
+              <p>Brand/Model : Toyota/Camry2015</p>
+              <p>Accidents/1000 Miles: 0<p>
+              <p>Airport Travel Time Saved<p>
+              <p>Movies Watched: 40<p>
+            </div>
+            <br>
+            <br>
+          </div>
+          
+          <h3 style="text-align: center;"> What Ollie Sees </h3>
+          <video class="center-img" controls autoplay>
+            <source src="static/img/AV-driverview1.mp4" type="video/mp4" >
+            Your browser does not support HTML5 video.
+          </video>
+
+        </div>
+
+    </div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGkGcz2IYWh7ibAZNhjxt4HBxXoSCLzyg&callback=initMap"></script>
   </body>
 </html>
