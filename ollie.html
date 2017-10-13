@@ -142,9 +142,7 @@
 
         // Instantiate an info window to hold step text.
         var contentString = "HELLO";
-        var stepDisplay = new google.maps.InfoWindow({
-          content: contentString
-        });
+        var stepDisplay = new google.maps.InfoWindow;
         
         
 
@@ -275,30 +273,36 @@
         });
         clickPolyline(line1)
 
-        var path = [];
       // Display the route between the initial start and end selections.
-        calculateAndDisplayRoute(
-          directionsDisplay, directionsService, markerArray, stepDisplay, map, line1, path);
+        var path = []; 
+        path = calculateAndDisplayRoute(
+          directionsDisplay, directionsService, markerArray, stepDisplay, map, line1);
 
-        animateCircle(line1);
-        showStats(line1);
+        animateCircle(line1, stepDisplay,path);
       }
 
       // Use the DOM setInterval() function to change the offset of the symbol
       // at fixed intervals.
-      function animateCircle(line1) {
+      function animateCircle(line1, stepDisplay, path) {
           var count = 0;
+          console.log(path.length);
+
           window.setInterval(function() {
             count = (count + 1) % 1000000;
 
             var icons = line1.get('icons');
             icons[0].offset = (count / 100) + '%';
             line1.set('icons', icons);
+
+            
+            // var position = google.maps.geometry.spherical.interpolate(path[0], path[-1], (count / 1000000));
+            //showStats(stepDisplay, line1, map);
         }, 20);
       }
 
       function calculateAndDisplayRoute(directionsDisplay, directionsService,
-                                         markerArray, stepDisplay, map, line1, path) {
+                                         markerArray, stepDisplay, map, line1) {
+        var path = [];
         // First, remove any existing markers from the map.
         for (var i = 0; i < markerArray.length; i++) {
           markerArray[i].setMap(null);
@@ -318,10 +322,13 @@
             directionsDisplay.setDirections(response);
             path = showSteps(response, markerArray, stepDisplay, map, path);
             line1.setPath(path);
+            var position = google.maps.geometry.spherical.interpolate(path[0], path[path.length-1], (1 / 1000000));
+            console.log(position);
           } else {
             window.alert('Directions request failed due to ' + status);
           }
         });
+        return path;
       }
 
       function showSteps(directionResult, markerArray, stepDisplay, map, path) {
@@ -339,7 +346,7 @@
           attachInstructionText(
             stepDisplay, marker, myRoute.steps[i].instructions, map);
         }
-        return path
+        return path;
       }
 
 
@@ -353,14 +360,17 @@
         });
       }
 
-      function showStats(line1) {
-        google.maps.event.add
+      function showStats(stepDisplay, line, map) {
+        google.maps.event.addListener(line, 'click', function() {
+          stepDisplay.setContent('test');
+          stepDisplay.open(map);
+        });
       }
 
       function clickPolyline(line){
         google.maps.event.addListener(line, 'click', function() {
           var modal = document.getElementById('myModal');
-          modal.style.display = "block";
+          // modal.style.display = "block";
           // alert('you clicked polyline');
       });
           var close = document.getElementsByClassName("close")[0];
@@ -418,6 +428,6 @@
         </div>
 
     </div>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGkGcz2IYWh7ibAZNhjxt4HBxXoSCLzyg&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGkGcz2IYWh7ibAZNhjxt4HBxXoSCLzyg&libraries=geometry&callback=initMap"></script>
   </body>
 </html>
