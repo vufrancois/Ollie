@@ -3,6 +3,8 @@
     <style>
       #info {
         height: 10%;
+        padding-top: 20px;
+        padding-right: 20px;
       }
       #map {
         height: 90%;
@@ -70,6 +72,8 @@
         display: inline-block;
         width: 60px;
         height: 34px;
+        vertical-align: bottom;
+        margin: 10px 0px 0px 0px;
       }
 
       /* Hide default HTML checkbox */
@@ -130,13 +134,13 @@
         var markerArray = [];
         // Instantiate a directions service.
         var directionsService = new google.maps.DirectionsService;
-        
+
         // Create a map and center it on Manhattan.
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 1,
           center: {lat: 41.771, lng: -73.974}
         });
-        
+
         // Create a renderer for directions and bind it to the map.
         var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
 
@@ -145,7 +149,7 @@
         var stepDisplay = new google.maps.InfoWindow({
           content: contentString
         });
-        
+
         var goldStar = {
           path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
           fillColor: 'yellow',
@@ -160,8 +164,8 @@
           icon: lineSymbol1,
           map: map
         });
-       
-        
+
+
         // Define the symbol, using one of the predefined paths ('CIRCLE')
         // supplied by the Google Maps JavaScript API.
         var lineSymbol1 = {
@@ -376,21 +380,20 @@
             close.onclick = function() {
                 var modal = document.getElementById('myModal');
                 modal.style.display = "none";
-            }     
+            }
    }
     </script>
   </head>
   <body>
     <div id="info">
-      <img src="static/img/simple-black.png" alt="Mountain View" style="height:100%;">
-      <img src="static/img/ollie_logo.png" alt="Mountain View" style="height:100% ;">
-      <img src="static/img/ollie_logo.png" alt="Mountain View" style="height:100% ;">
-      <img src="static/img/ollie_logo.png" alt="Mountain View" style="height:100% ;">
+      <!-- <img src="static/img/simple-black.png" alt="Mountain View" style="height:100%;"> -->
+      <img src="static/img/ollie_logo.png" alt="Mountain View" style="height:75%;padding-left:20px">
 <!--       <h4 style="float:right;">AV in action: 435,323</h4>
- -->      
+ -->
       <label style="float:right" class="switch">
         <input type="checkbox">
         <span class="slider round"></span>
+
       </label>
     </div>
 
@@ -415,7 +418,7 @@
             <br>
             <br>
           </div>
-          
+
           <h3 style="text-align: center;"> What Ollie Sees </h3>
           <video class="center-img" controls autoplay>
             <source src="static/img/AV-driverview1.mp4" type="video/mp4" >
