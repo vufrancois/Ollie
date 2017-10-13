@@ -274,14 +274,13 @@
           directionsDisplay, directionsService, markerArray, stepDisplay, map, line1, path1);
 
         animateCar(line1);
-        showStats(line1);
       
       var path2 = [];
       // Display the route between the initial start and end selections.
         calculateAndDisplayRoute2(
           directionsDisplay, directionsService, markerArray, stepDisplay, map, line2, path2);
 
-        animateCar(line2);
+          animateCar(line2); 
 
       
 
@@ -328,7 +327,7 @@
       function animateCar(line) {
           var count = 0;
           window.setInterval(function() {
-            count = (count + 1) % 1000000;
+            count = (count + 1) % 2200;
 
             var icons = line.get('icons');
             icons[0].offset = (count / 30) + '%';
@@ -548,8 +547,8 @@
     </script>
     <script>
       // clicking on popup image injects iframe
-      $(document).on('click', '.center-img', function() {
-        $(this).after("<iframe width='560' height='315' src='https://www.youtube.com/embed/VG68SKoG7vE?rel=0&amp;controls=0&amp;showinfo=0&amp;start=180' allowfullscreen></iframe>");
+      $(document).on('click', '#av_stats', function() {
+        $('#book').after("<iframe width='560' height='315' src='https://www.youtube.com/embed/VG68SKoG7vE?rel=0&amp;controls=0&amp;showinfo=0&amp;start=180' allowfullscreen></iframe>");
       });
     </script>
   </head>
@@ -573,8 +572,8 @@
     <div id="myModal" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
-            <img class="center-img" src="static/img/screen1.png" alt="Mountain View" style="margin:auto;width:50%;">
-
+            <img class="center-img" id="av_stats" src="static/img/screen1.png" alt="Mountain View" style="margin:auto;width:50%;">
+            <img class='center-img' id="book" src="static/img/bookbutton.png" alt='Book Free Ride'>
         </div>
 
     </div>
