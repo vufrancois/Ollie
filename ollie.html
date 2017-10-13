@@ -3,6 +3,8 @@
     <style>
       #info {
         height: 10%;
+        padding-top: 17px;
+        padding-right: 20px;
       }
       #map {
         height: 90%;
@@ -30,16 +32,17 @@
 
       /* Modal Content/Box */
       .modal-content {
-          background-color: #DA1884;
+          background-color: #FFFFFF;
           margin: 15% auto; /* 15% from the top and centered */
           padding: 20px;
           border: 1px solid #888;
           width: 80%; /* Could be more or less, depending on screen size */
-          border-radius: 25px;
+          border-radius: 10px;
       }
 
       .modal-content-text {
-          color: #fefefe;
+          color: #000000;
+          font-family: 'Roboto';
 
 
        }
@@ -48,8 +51,10 @@
       .close {
           color: #aaa;
           float: right;
+          padding-bottom: 30px;
           font-size: 28px;
           font-weight: bold;
+
       }
 
       .close:hover,
@@ -70,6 +75,8 @@
         display: inline-block;
         width: 60px;
         height: 34px;
+        vertical-align: bottom;
+        margin: 10px 0px 0px 0px;
       }
 
       /* Hide default HTML checkbox */
@@ -137,13 +144,13 @@
         var markerArray = [];
         // Instantiate a directions service.
         var directionsService = new google.maps.DirectionsService;
-        
+
         // Create a map and center it on Manhattan.
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 15,
           center: {lat: 40.7587, lng: -73.9787}
         });
-        
+
         // Create a renderer for directions and bind it to the map.
         var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
 
@@ -152,7 +159,26 @@
         var stepDisplay = new google.maps.InfoWindow({
           content: contentString
         });
+<<<<<<< HEAD
       
+=======
+
+        var goldStar = {
+          path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
+          fillColor: 'yellow',
+          fillOpacity: 0.8,
+          scale: 1,
+          strokeColor: 'gold',
+          strokeWeight: 14
+        };
+
+        var marker = new google.maps.Marker({
+          position: {lat: 40.7484, lng: 73.9857},
+          icon: lineSymbol1,
+          map: map
+        });
+
+>>>>>>> 6b11cefa2e5aca7db4e29ac16ffc4e63b135a41a
         // Define the symbol, using one of the predefined paths ('CIRCLE')
         // supplied by the Google Maps JavaScript API.
         var lineSymbol1 = {
@@ -526,24 +552,28 @@
             close.onclick = function() {
                 var modal = document.getElementById('myModal');
                 modal.style.display = "none";
-            }     
+            }
    }
 
     </script>
   </head>
   <body>
     <div id="info">
-      <img src="static/img/ollie_logo.png" alt="Mountain View" style="height:100% ;">
-      <img src="static/img/simple-black.png" alt="Mountain View" style="height:100%;">
-      <img src="static/img/inamoto_logo.png" alt="Mountain View" style="height:100% ;">
-      <img src="static/img/toyota_logo.jpg" alt="Mountain View" style="height:100% ;">
-
+      <!-- <img src="static/img/simple-black.png" alt="Mountain View" style="height:100%;"> -->
+      <img src="static/img/ollie_logo.png" alt="Mountain View" style="height:75%;padding-left:20px">
 <!--       <h4 style="float:right;">AV in action: 435,323</h4>
+<<<<<<< HEAD
  -->  
 
       <label style="float:right;" class="switch">
         <input type="checkbox" onclick="showCars()" />
+=======
+ -->
+      <label style="float:right" class="switch">
+        <input type="checkbox">
+>>>>>>> 6b11cefa2e5aca7db4e29ac16ffc4e63b135a41a
         <span class="slider round"></span>
+
       </label>
     </div>
 
@@ -557,28 +587,29 @@
         <div class="modal-content">
           <span class="close">&times;</span>
           <div class="modal-content-text">
-            <img class="center-img" src="static/img/ollie.jpg" alt="Mountain View" style="">
-            <div style="padding-left:20%">
-              <p>ID:005</p>
-              <p>Miles Driven : 30,000</p>
-              <p>Brand/Model : Toyota/Camry2015</p>
-              <p>Accidents/1000 Miles: 0<p>
-              <p>Airport Travel Time Saved<p>
+            <img class="center-img" src="static/img/ollie.jpg" alt="Mountain View" style="margin:auto;width:100%;">
+            <div style="padding-left:20%;text-align:left; padding-top:40px;">
+              <p>Ollie: Self-Driving Car #005</p>
+              <p>Miles Driven: 30,000</p>
+              <p>Brand/Model: Toyota/Camry2015</p>
+              <p>Accidents/1000: Miles: 0<p>
+              <p>Airport Travel Time Saved: 140 Hours<p>
               <p>Movies Watched: 40<p>
             </div>
             <br>
             <br>
           </div>
-          
-          <h3 style="text-align:center; color:#fefefe;"> What Ollie Sees </h3>
-          <video class="center-img" controls autoplay>
+          <h3 style="text-align:center; color:#000000;font-family: 'Roboto';"> What Ollie Sees </h3>
+          <!-- <video class="center-img" width="100%" height="100%" style:"display:block; margin:0 auto;" controls
             <source src="static/img/AV-driverview1.mp4" type="video/mp4" >
-            Your browser does not support HTML5 video.
+            Your browser does not support HTML5 video. -->
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/zdM8EepbRRg?start=10" frameborder="0" allowfullscreen></iframe>
           </video>
 
         </div>
 
     </div>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,‌​100italic,300,300ita‌​lic,400italic,500,50‌​0italic,700,700itali‌​c,900italic,900' rel='stylesheet' type='text/css'>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGkGcz2IYWh7ibAZNhjxt4HBxXoSCLzyg&callback=initMap"></script>
   </body>
 </html>
