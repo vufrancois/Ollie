@@ -67,6 +67,7 @@
       .center-img {
         display: block;
         margin: auto;
+        padding: 30px 0 30px 0;
       }
 
             /* The switch - the box around the slider */
@@ -130,6 +131,7 @@
         border-radius: 50%;
       }
     </style>
+    <script data-require="jquery@*" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script >
       var lineSymbol2;
 
@@ -540,9 +542,15 @@
             close.onclick = function() {
                 var modal = document.getElementById('myModal');
                 modal.style.display = "none";
+                $('iframe').remove();
             }
-   }
-
+      }
+    </script>
+    <script>
+      // clicking on popup image injects iframe
+      $(document).on('click', '.center-img', function() {
+        $(this).after("<iframe width='560' height='315' src='https://www.youtube.com/embed/VG68SKoG7vE?rel=0&amp;controls=0&amp;showinfo=0&amp;start=180' allowfullscreen></iframe>");
+      });
     </script>
   </head>
   <body>
@@ -565,7 +573,7 @@
     <div id="myModal" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
-            <img class="center-img" src="static/img/screen1.png" alt="Mountain View" style="margin:auto;width:75%;">
+            <img class="center-img" src="static/img/screen1.png" alt="Mountain View" style="margin:auto;width:50%;">
 
         </div>
 
