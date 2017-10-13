@@ -3,7 +3,7 @@
     <style>
       #info {
         height: 10%;
-        padding-top: 20px;
+        padding-top: 17px;
         padding-right: 20px;
       }
       #map {
@@ -32,16 +32,17 @@
 
       /* Modal Content/Box */
       .modal-content {
-          background-color: #DA1884;
+          background-color: #FFFFFF;
           margin: 15% auto; /* 15% from the top and centered */
           padding: 20px;
           border: 1px solid #888;
           width: 80%; /* Could be more or less, depending on screen size */
-          border-radius: 25px;
+          border-radius: 10px;
       }
 
       .modal-content-text {
-          color: #fefefe;
+          color: #000000;
+          font-family: 'Roboto';
 
 
        }
@@ -50,8 +51,10 @@
       .close {
           color: #aaa;
           float: right;
+          padding-bottom: 30px;
           font-size: 28px;
           font-weight: bold;
+
       }
 
       .close:hover,
@@ -408,30 +411,29 @@
         <div class="modal-content">
           <span class="close">&times;</span>
           <div class="modal-content-text">
-            <img class="center-img" src="static/img/ollie.jpg" alt="Mountain View" style="">
-            <div style="padding-left:20%">
-              <p>ID:005</p>
-              <p>Miles Driven : 30,000</p>
-              <p>Brand/Model : Toyota/Camry2015</p>
-              <p>Accidents/1000 Miles: 0<p>
-              <p>Airport Travel Time Saved<p>
+            <img class="center-img" src="static/img/ollie.jpg" alt="Mountain View" style="margin:auto;width:100%;">
+            <div style="padding-left:20%;text-align:left; padding-top:40px;">
+              <p>Ollie: Self-Driving Car #005</p>
+              <p>Miles Driven: 30,000</p>
+              <p>Brand/Model: Toyota/Camry2015</p>
+              <p>Accidents/1000: Miles: 0<p>
+              <p>Airport Travel Time Saved: 140 Hours<p>
               <p>Movies Watched: 40<p>
             </div>
             <br>
             <br>
           </div>
-
-          <h3 style="text-align: center;"> What Ollie Sees </h3>
-
-          <h3 style="text-align:center; color:#fefefe;"> What Ollie Sees </h3>
-          <video class="center-img" controls autoplay>
+          <h3 style="text-align:center; color:#000000;font-family: 'Roboto';"> What Ollie Sees </h3>
+          <!-- <video class="center-img" width="100%" height="100%" style:"display:block; margin:0 auto;" controls
             <source src="static/img/AV-driverview1.mp4" type="video/mp4" >
-            Your browser does not support HTML5 video.
+            Your browser does not support HTML5 video. -->
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/zdM8EepbRRg?start=10" frameborder="0" allowfullscreen></iframe>
           </video>
 
         </div>
 
     </div>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,‌​100italic,300,300ita‌​lic,400italic,500,50‌​0italic,700,700itali‌​c,900italic,900' rel='stylesheet' type='text/css'>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGkGcz2IYWh7ibAZNhjxt4HBxXoSCLzyg&callback=initMap"></script>
   </body>
 </html>
