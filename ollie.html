@@ -131,8 +131,15 @@
       }
     </style>
     <script >
-      // This example adds an animated symbol to a polyline.
+      var lineSymbol2;
 
+      function showCars() {
+        if (lineSymbol2.scale == 0.7)
+          lineSymbol2.scale =0;
+        else 
+          lineSymbol2.scale =0.7;
+      }
+      // This example adds an animated symbol to a polyline.
       function initMap() {
         var markerArray = [];
         // Instantiate a directions service.
@@ -140,8 +147,8 @@
 
         // Create a map and center it on Manhattan.
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 1,
-          center: {lat: 41.771, lng: -73.974}
+          zoom: 15,
+          center: {lat: 40.7587, lng: -73.9787}
         });
 
         // Create a renderer for directions and bind it to the map.
@@ -152,21 +159,13 @@
         var stepDisplay = new google.maps.InfoWindow({
           content: contentString
         });
-
-        var goldStar = {
-          path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
-          fillColor: 'yellow',
-          fillOpacity: 0.8,
-          scale: 1,
-          strokeColor: 'gold',
-          strokeWeight: 14
-        };
-
+        
         var marker = new google.maps.Marker({
           position: {lat: 40.7484, lng: 73.9857},
           icon: lineSymbol1,
           map: map
         });
+
 
         // Define the symbol, using one of the predefined paths ('CIRCLE')
         // supplied by the Google Maps JavaScript API.
@@ -182,33 +181,7 @@
           anchor: new google.maps.Point(10, 25)
         };
 
-        var lineSymbol2 = {
-          path: "M17.402,0H5.643C2.526,0,0,3.467,0,6.584v34.804c0,3.116,2.526,5.644,5.643,5.644h11.759c3.116,0,5.644-2.527,5.644-5.644 V6.584C23.044,3.467,20.518,0,17.402,0z M22.057,14.188v11.665l-2.729,0.351v-4.806L22.057,14.188z M20.625,10.773 c-1.016,3.9-2.219,8.51-2.219,8.51H4.638l-2.222-8.51C2.417,10.773,11.3,7.755,20.625,10.773z M3.748,21.713v4.492l-2.73-0.349 V14.502L3.748,21.713z M1.018,37.938V27.579l2.73,0.343v8.196L1.018,37.938z M2.575,40.882l2.218-3.336h13.771l2.219,3.336H2.575z M19.328,35.805v-7.872l2.729-0.355v10.048L19.328,35.805z",
-          scale: .7,
-          strokeColor: "white",
-          strokeWeight: .10,
-          fillOpacity: 1,
-          fillColor: "#FF6347",
-          offset: "5%",
-          rotation: 208,
-          // rotation: parseInt(heading[i]),
-          anchor: new google.maps.Point(10, 25)
-        };
-
-        var lineSymbol3 = {
-          path: "M17.402,0H5.643C2.526,0,0,3.467,0,6.584v34.804c0,3.116,2.526,5.644,5.643,5.644h11.759c3.116,0,5.644-2.527,5.644-5.644 V6.584C23.044,3.467,20.518,0,17.402,0z M22.057,14.188v11.665l-2.729,0.351v-4.806L22.057,14.188z M20.625,10.773 c-1.016,3.9-2.219,8.51-2.219,8.51H4.638l-2.222-8.51C2.417,10.773,11.3,7.755,20.625,10.773z M3.748,21.713v4.492l-2.73-0.349 V14.502L3.748,21.713z M1.018,37.938V27.579l2.73,0.343v8.196L1.018,37.938z M2.575,40.882l2.218-3.336h13.771l2.219,3.336H2.575z M19.328,35.805v-7.872l2.729-0.355v10.048L19.328,35.805z",
-          scale: .7,
-          strokeColor: "white",
-          strokeWeight: .10,
-          fillOpacity: 1,
-          fillColor: "#FF6347",
-          offset: "5%",
-          rotation: 118,
-          // rotation: parseInt(heading[i]),
-          anchor: new google.maps.Point(10, 25)
-        };
-
-        var lineSymbol4 = {
+        lineSymbol2 = {
           path: "M17.402,0H5.643C2.526,0,0,3.467,0,6.584v34.804c0,3.116,2.526,5.644,5.643,5.644h11.759c3.116,0,5.644-2.527,5.644-5.644 V6.584C23.044,3.467,20.518,0,17.402,0z M22.057,14.188v11.665l-2.729,0.351v-4.806L22.057,14.188z M20.625,10.773 c-1.016,3.9-2.219,8.51-2.219,8.51H4.638l-2.222-8.51C2.417,10.773,11.3,7.755,20.625,10.773z M3.748,21.713v4.492l-2.73-0.349 V14.502L3.748,21.713z M1.018,37.938V27.579l2.73,0.343v8.196L1.018,37.938z M2.575,40.882l2.218-3.336h13.771l2.219,3.336H2.575z M19.328,35.805v-7.872l2.729-0.355v10.048L19.328,35.805z",
           scale: .7,
           strokeColor: "white",
@@ -216,73 +189,15 @@
           fillOpacity: 1,
           fillColor: "#000000",
           offset: "5%",
-          rotation: 28,
           // rotation: parseInt(heading[i]),
           anchor: new google.maps.Point(10, 25)
         };
 
-        var lineSymbol5 = {
-          path: "M17.402,0H5.643C2.526,0,0,3.467,0,6.584v34.804c0,3.116,2.526,5.644,5.643,5.644h11.759c3.116,0,5.644-2.527,5.644-5.644 V6.584C23.044,3.467,20.518,0,17.402,0z M22.057,14.188v11.665l-2.729,0.351v-4.806L22.057,14.188z M20.625,10.773 c-1.016,3.9-2.219,8.51-2.219,8.51H4.638l-2.222-8.51C2.417,10.773,11.3,7.755,20.625,10.773z M3.748,21.713v4.492l-2.73-0.349 V14.502L3.748,21.713z M1.018,37.938V27.579l2.73,0.343v8.196L1.018,37.938z M2.575,40.882l2.218-3.336h13.771l2.219,3.336H2.575z M19.328,35.805v-7.872l2.729-0.355v10.048L19.328,35.805z",
-          scale: .7,
-          strokeColor: "white",
-          strokeWeight: .10,
-          fillOpacity: 1,
-          fillColor: "#000000",
-          offset: "5%",
-          rotation: 118,
-          // rotation: parseInt(heading[i]),
-          anchor: new google.maps.Point(10, 25)
-        };
-
-        var lineSymbol6 = {
-          path: "M17.402,0H5.643C2.526,0,0,3.467,0,6.584v34.804c0,3.116,2.526,5.644,5.643,5.644h11.759c3.116,0,5.644-2.527,5.644-5.644 V6.584C23.044,3.467,20.518,0,17.402,0z M22.057,14.188v11.665l-2.729,0.351v-4.806L22.057,14.188z M20.625,10.773 c-1.016,3.9-2.219,8.51-2.219,8.51H4.638l-2.222-8.51C2.417,10.773,11.3,7.755,20.625,10.773z M3.748,21.713v4.492l-2.73-0.349 V14.502L3.748,21.713z M1.018,37.938V27.579l2.73,0.343v8.196L1.018,37.938z M2.575,40.882l2.218-3.336h13.771l2.219,3.336H2.575z M19.328,35.805v-7.872l2.729-0.355v10.048L19.328,35.805z",
-          scale: .7,
-          strokeColor: "white",
-          strokeWeight: .10,
-          fillOpacity: 1,
-          fillColor: "#000000",
-          offset: "5%",
-          rotation: 118,
-          // rotation: parseInt(heading[i]),
-          anchor: new google.maps.Point(10, 25)
-        };
-
-
-
-        var marker2 = new google.maps.Marker({
-          position: {lat: 40.7484, lng: -73.9782},
-          icon: lineSymbol2,
-          map: map
-        });
-
-        var marker3 = new google.maps.Marker({
-          position: {lat: 40.7606, lng: -73.9782},
-          icon: lineSymbol3,
-          map: map
-        });
-
-        var marker4 = new google.maps.Marker({
-          position: {lat: 40.77, lng: -73.988},
-          icon: lineSymbol4,
-          map: map
-        });
-
-        var marker5 = new google.maps.Marker({
-          position: {lat: 40.75, lng: -73.9782},
-          icon: lineSymbol5,
-          map: map
-        });
-
-        var marker6 = new google.maps.Marker({
-          position: {lat: 40.755, lng: -74},
-          icon: lineSymbol6,
-          map: map
-        })
 
         // Create the polyline and add the symbol to it via the 'icons' property.
         var line1 = new google.maps.Polyline({
           path: [],
-          strokeWeight:15,
+          strokeWeight:5,
           strokeColor: "white",
           icons: [{
             icon: lineSymbol1,
@@ -292,35 +207,139 @@
         });
         clickPolyline(line1)
 
-        var path = [];
-      // Display the route between the initial start and end selections.
-        calculateAndDisplayRoute(
-          directionsDisplay, directionsService, markerArray, stepDisplay, map, line1, path);
+        // Create the polyline and add the symbol to it via the 'icons' property.
+        var line2 = new google.maps.Polyline({
+          path: [],
+          strokeWeight:3,
+          strokeColor: "white",
+          icons: [{
+            icon: lineSymbol1,
+            offset: '100%'
+          }],
+          map: map
+        });
 
-        animateCircle(line1);
+        var line3 = new google.maps.Polyline({
+          path: [],
+          strokeWeight:3,
+          strokeColor: "white",
+          icons: [{
+            icon: lineSymbol1,
+            offset: '100%'
+          }],
+          map: map
+        });
+
+        var line4 = new google.maps.Polyline({
+          path: [],
+          strokeWeight:3,
+          strokeColor: "white",
+          icons: [{
+            icon: lineSymbol2,
+            offset: '100%'
+          }],
+          map: map
+        });
+
+        var line5 = new google.maps.Polyline({
+          path: [],
+          strokeWeight:3,
+          strokeColor: "white",
+          icons: [{
+            icon: lineSymbol2,
+            offset: '100%'
+          }],
+          map: map
+        });
+
+        var line6 = new google.maps.Polyline({
+          path: [],
+          strokeWeight:3,
+          strokeColor: "white",
+          icons: [{
+            icon: lineSymbol2,
+            offset: '100%'
+          }],
+          map: map
+        });
+
+
+        
+
+      var path1 = [];
+      // Display the route between the initial start and end selections.
+        calculateAndDisplayRoute1(
+          directionsDisplay, directionsService, markerArray, stepDisplay, map, line1, path1);
+
+        animateCar(line1);
         showStats(line1);
+      
+      var path2 = [];
+      // Display the route between the initial start and end selections.
+        calculateAndDisplayRoute2(
+          directionsDisplay, directionsService, markerArray, stepDisplay, map, line2, path2);
+
+        animateCar(line2);
+
+      
+
+      var path3 = [];
+      // Display the route between the initial start and end selections.
+        calculateAndDisplayRoute3(
+          directionsDisplay, directionsService, markerArray, stepDisplay, map, line3, path3);
+
+        animateCar(line3);
+
+      
+
+      var path4 = [];
+      // Display the route between the initial start and end selections.
+        calculateAndDisplayRoute4(
+          directionsDisplay, directionsService, markerArray, stepDisplay, map, line4, path4);
+
+        animateCar(line4);
+
+      
+
+      var path5 = [];
+      // Display the route between the initial start and end selections.
+        calculateAndDisplayRoute5(
+          directionsDisplay, directionsService, markerArray, stepDisplay, map, line5, path5);
+
+        animateCar(line5);
+
+      
+
+      var path6 = [];
+      // Display the route between the initial start and end selections.
+        calculateAndDisplayRoute6(
+          directionsDisplay, directionsService, markerArray, stepDisplay, map, line6, path6);
+
+        animateCar(line6);
+
       }
+
+
 
       // Use the DOM setInterval() function to change the offset of the symbol
       // at fixed intervals.
-      function animateCircle(line1) {
+      function animateCar(line) {
           var count = 0;
           window.setInterval(function() {
             count = (count + 1) % 1000000;
 
-            var icons = line1.get('icons');
-            icons[0].offset = (count / 100) + '%';
-            line1.set('icons', icons);
+            var icons = line.get('icons');
+            icons[0].offset = (count / 30) + '%';
+            line.set('icons', icons);
         }, 20);
       }
 
-      function calculateAndDisplayRoute(directionsDisplay, directionsService,
+      function calculateAndDisplayRoute1(directionsDisplay, directionsService,
                                          markerArray, stepDisplay, map, line1, path) {
         // First, remove any existing markers from the map.
         for (var i = 0; i < markerArray.length; i++) {
           markerArray[i].setMap(null);
         }
-
         // Retrieve the start and end locations and create a DirectionsRequest using
         // WALKING directions.
         directionsService.route({
@@ -332,7 +351,7 @@
           // markers for each step.
           if (status === 'OK') {
             // parse waypoints
-            directionsDisplay.setDirections(response);
+            // directionsDisplay.setDirections(response);
             path = showSteps(response, markerArray, stepDisplay, map, path);
             line1.setPath(path);
           } else {
@@ -340,6 +359,143 @@
           }
         });
       }
+
+      function calculateAndDisplayRoute2(directionsDisplay, directionsService,
+                                         markerArray, stepDisplay, map, line, path) {
+        // First, remove any existing markers from the map.
+        for (var i = 0; i < markerArray.length; i++) {
+          markerArray[i].setMap(null);
+        }
+
+        // Retrieve the start and end locations and create a DirectionsRequest using
+        // WALKING directions.
+        directionsService.route({
+          origin: "Empire State Building, NY",
+          destination: "Fashion Institute of Technology, NY",
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          // Route the directions and pass the response to a function to create
+          // markers for each step.
+          if (status === 'OK') {
+            // parse waypoints
+            // directionsDisplay.setDirections(response);
+            path = showSteps(response, markerArray, stepDisplay, map, path);
+            line.setPath(path);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
+
+      function calculateAndDisplayRoute3(directionsDisplay, directionsService,
+                                         markerArray, stepDisplay, map, line2, path) {
+        // First, remove any existing markers from the map.
+        for (var i = 0; i < markerArray.length; i++) {
+          markerArray[i].setMap(null);
+        }
+
+        // Retrieve the start and end locations and create a DirectionsRequest using
+        // WALKING directions.
+        directionsService.route({
+          origin: "The musium of modern arts, NY",
+          destination: "Yotel New York City, NY",
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          // Route the directions and pass the response to a function to create
+          // markers for each step.
+          if (status === 'OK') {
+            // parse waypoints
+            // directionsDisplay.setDirections(response);
+            path = showSteps(response, markerArray, stepDisplay, map, path);
+            line2.setPath(path);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
+
+      function calculateAndDisplayRoute4(directionsDisplay, directionsService,
+                                         markerArray, stepDisplay, map, line2, path) {
+        // First, remove any existing markers from the map.
+        for (var i = 0; i < markerArray.length; i++) {
+          markerArray[i].setMap(null);
+        }
+
+        // Retrieve the start and end locations and create a DirectionsRequest using
+        // WALKING directions.
+        directionsService.route({
+          origin: "46 E 61st St, New York, NY 10065",
+          destination: "Rockefeller Center, 45 Rockefeller Plaza, New York, NY 10111",
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          // Route the directions and pass the response to a function to create
+          // markers for each step.
+          if (status === 'OK') {
+            // parse waypoints
+            // directionsDisplay.setDirections(response);
+            path = showSteps(response, markerArray, stepDisplay, map, path);
+            line2.setPath(path);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
+
+      function calculateAndDisplayRoute5(directionsDisplay, directionsService,
+                                         markerArray, stepDisplay, map, line2, path) {
+        // First, remove any existing markers from the map.
+        for (var i = 0; i < markerArray.length; i++) {
+          markerArray[i].setMap(null);
+        }
+
+        // Retrieve the start and end locations and create a DirectionsRequest using
+        // WALKING directions.
+        directionsService.route({
+          origin: "Studio 54, NY",
+          destination: "Empire State Building, NY",
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          // Route the directions and pass the response to a function to create
+          // markers for each step.
+          if (status === 'OK') {
+            // parse waypoints
+            // directionsDisplay.setDirections(response);
+            path = showSteps(response, markerArray, stepDisplay, map, path);
+            line2.setPath(path);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
+
+      function calculateAndDisplayRoute6(directionsDisplay, directionsService,
+                                         markerArray, stepDisplay, map, line2, path) {
+        // First, remove any existing markers from the map.
+        for (var i = 0; i < markerArray.length; i++) {
+          markerArray[i].setMap(null);
+        }
+
+        // Retrieve the start and end locations and create a DirectionsRequest using
+        // WALKING directions.
+        directionsService.route({
+          origin: "Time Square, NY",
+          destination: "Pod 51, NY",
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          // Route the directions and pass the response to a function to create
+          // markers for each step.
+          if (status === 'OK') {
+            // parse waypoints
+            // directionsDisplay.setDirections(response);
+            path = showSteps(response, markerArray, stepDisplay, map, path);
+            line2.setPath(path);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
+
+
 
       function showSteps(directionResult, markerArray, stepDisplay, map, path) {
         // For each step, place a marker, and add the text to the marker's infowindow.
@@ -386,16 +542,15 @@
                 modal.style.display = "none";
             }
    }
+
     </script>
   </head>
   <body>
     <div id="info">
-      <!-- <img src="static/img/simple-black.png" alt="Mountain View" style="height:100%;"> -->
       <img src="static/img/ollie_logo.png" alt="Mountain View" style="height:75%;padding-left:20px">
-<!--       <h4 style="float:right;">AV in action: 435,323</h4>
- -->
-      <label style="float:right" class="switch">
-        <input type="checkbox">
+
+      <label style="float:right;" class="switch">
+        <input type="checkbox" onclick="showCars()" />
         <span class="slider round"></span>
 
       </label>
