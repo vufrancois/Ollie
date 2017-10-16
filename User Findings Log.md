@@ -111,3 +111,7 @@ User 5: Demographic: a Pharmacist in Midwest
 8.  If you knew a little more about how the self-driving cars work, how much more likely would you be to ride in one? (Validate User Needs) (Show Demo)
 9.  On a scale of 1 to 10, how much would you say you trust self-driving vehicles after reviewing the demo? (Validate User Needs)
 10. Can you envision anything else that could help increase your trust level for self-driving cars? If so, what is it? (Record User Wants) (Conceptualize)
+
+Results from the survey can be found at 
+https://docs.google.com/spreadsheets/d/1VPJb-NKt9s0ZjPl485jS3EsBgESU118yHN4Vt4L7C_o/edit#gid=1179185091
+Last Updated on Oct 15, 2017
