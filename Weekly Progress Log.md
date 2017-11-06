@@ -112,3 +112,19 @@ Risks/Challenges:
   Due to timeline constraints, we need to quickly focus in on user validation so we can begin building.
   The development stack for creating a working demo is still up for debate.
   We need to differentiate between customers and users. How will we monetize the app? Does this change its functionality?
+
+## Week 10:
+
+Week behind:
+  Scrum 2 - met with other product studio teams and TA and got their insights on our current product
+  removing excess features - we had discussions about having a standalone community/forum but decided to drop it as it's not a core feature
+  Vu fleshed out the first iteration of the mobile demo design
+  Luke and Christy agreed on the tech stack and started building the backbone of a mobile demo in Reactive Native
+
+Week ahead:
+  discuss demo design as a group and reiterate
+  continue building the mobile app
+  
+Risks/Challenges:
+  the design and the initial app have some discrepancies that need to be reconciled
+  there are many ideas floating around - and that's good - but we need to focus on our decided core features
