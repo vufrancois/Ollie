@@ -113,6 +113,94 @@ Risks/Challenges:
   The development stack for creating a working demo is still up for debate.
   We need to differentiate between customers and users. How will we monetize the app? Does this change its functionality?
 
+## Week 6:
+
+Week Behind:
+
+  Completed second iteration of user interview questions which can be found here.
+  Hashed out our product description and feature set of Narrative Complete Product (NCP).
+  Created visual representation of product loop
+  Reiterated the architecture diagram
+
+Week Ahead:
+
+  Sprint 2! Validate the narrative
+  Build working demo of our product loop
+  Validate the demo with at least 4 non-students
+  Meet with Will to get feedback on the validation presentation
+
+Risks/Challenges:
+
+  We've had a lot of discussions on what the demo should look like and agreed on a set of educational slides or videos, but we haven't laid out the details.
+  Sprint 2 is in a few days and we don't quite feel ready
+
+
+## Week 7:
+
+Week Behind:
+  Sprint 2 ​​- Deck
+  Recorded +30 User Survey & Interviews
+  Pivoted Product Idea
+  Updated Architecture Diagram & Product Loop
+
+Week Ahead:
+  Unpack Feedback
+  Meet /w Will
+  Rework Narrative
+  More User Validations
+
+Risks/Challenges:
+  Would a customer be willing to implement our product into their platform? Who are all our potential customers?
+  Does our narrative make sense?
+  For demo purposes, is beginning to create a mobile app the best course of action? How do we show our product can be applied in a variety of situations and companies?
+  What data points and statistics are important to users?
+
+
+## Week 8:
+
+Week Behind:
+
+  Unpacked feedback
+  Updated Weekly Progress Log
+  Got feedback from Karan
+  Submitted Peer feedback for the team
+
+Week Ahead:
+
+  Meet /w Will
+  Crit
+  Ideate and validate on what information to show and how
+  Validate (or invalidate) sprint demo with at least more four non-students.
+  Update User Findings Log
+  Begin a 4min Tech Talk on our system architecture
+
+Risks/Challenges:
+  Need to modify narrative to make it clear why a user would interact with our product.
+
+
+## Week 9:
+
+Week Behind:
+
+  Meeting with Will.
+  Crit 2 – validated our idea of building an API product and the approach of exposing users to relevant information to increase trust.
+  Pivoted from showing general statistics to presenting more customized content by crowdsourcing.
+  Updated architecture diagram and Crit findings log.
+  Conceived deck for Tech Talk.
+
+Week Ahead:
+
+ Scrum - give our 4min Tech Talk.
+ Embark on developing the system.
+ Continue validating our narrative.
+
+Risks/Challenges:
+
+  How do we handle frequently sourcing content from reliable sources?
+  How to filter and vet the content posted?
+  How to increase user engagement?
+
+
 ## Week 10:
 
 Week behind:
@@ -124,7 +212,7 @@ Week behind:
 Week ahead:
   discuss demo design as a group and reiterate
   continue building the mobile app
-  
+
 Risks/Challenges:
   the design and the initial app have some discrepancies that need to be reconciled
   there are many ideas floating around - and that's good - but we need to focus on our decided core features
