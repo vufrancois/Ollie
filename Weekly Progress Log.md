@@ -138,12 +138,14 @@ Risks/Challenges:
 ## Week 7:
 
 Week Behind:
+
   Sprint 2 ​​- Deck
   Recorded +30 User Survey & Interviews
   Pivoted Product Idea
   Updated Architecture Diagram & Product Loop
 
 Week Ahead:
+
   Unpack Feedback
   Meet /w Will
   Rework Narrative
@@ -206,12 +208,14 @@ Risks/Challenges:
 ## Week 10:
 
 Week behind:
+
   Scrum 2 - met with other product studio teams and TA and got their insights on our current product
   removing excess features - we had discussions about having a standalone community/forum but decided to drop it as it's not a core feature
   Vu fleshed out the first iteration of the mobile demo design
   Luke and Christy agreed on the tech stack and started building the backbone of a mobile demo in Reactive Native
 
 Week ahead:
+
   discuss demo design as a group and reiterate
   continue building the mobile app
 
