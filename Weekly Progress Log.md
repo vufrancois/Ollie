@@ -150,6 +150,7 @@ Week Ahead:
   More User Validations
 
 Risks/Challenges:
+
   Would a customer be willing to implement our product into their platform? Who are all our potential customers?
   Does our narrative make sense?
   For demo purposes, is beginning to create a mobile app the best course of action? How do we show our product can be applied in a variety of situations and companies?
@@ -175,6 +176,7 @@ Week Ahead:
   Begin a 4min Tech Talk on our system architecture
 
 Risks/Challenges:
+
   Need to modify narrative to make it clear why a user would interact with our product.
 
 
@@ -214,5 +216,6 @@ Week ahead:
   continue building the mobile app
 
 Risks/Challenges:
+
   the design and the initial app have some discrepancies that need to be reconciled
   there are many ideas floating around - and that's good - but we need to focus on our decided core features
