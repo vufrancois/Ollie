@@ -7,3 +7,6 @@
 3. The adoption of self-driving cars is analogous to the adoption elevators.
 
 4. Is an AI humanizing enough to create trust? (Answered via research)
+
+## Crit 2 Notes:
+1. pivot to a marketing strategy.
