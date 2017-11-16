@@ -1,7 +1,91 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
-import { View, Text, Video, WebView, Button,TouchableWithoutFeedback, StyleSheet } from 'react-native';
+import { View, Text, Video, WebView, Button,TouchableWithoutFeedback, StyleSheet, Image } from 'react-native';
+import * as Progress from 'react-native-progress';
 
+const HOME='home';
+const SELECT1='s1';
+
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);  
+
+    this.state = {
+      screen: HOME,
+      progress: 0
+    }
+  }
+
+  render() {
+    const {screen} = this.state; 
+
+    switch(screen) {
+      case HOME:
+        updateIndex = (index) => {
+          this.setState({index})
+        }
+
+        goToS1 = () => {
+          this.setState({screen: SELECT1})
+        }
+
+        return (
+          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    
+            <Text>Do you believe in Self-Driving Cars?</Text>
+
+            <Progress.Bar progress={this.state.progress} width={300} height={30}/>
+
+            <TouchableWithoutFeedback onPress={goToS1}>
+              <View style={styles.button}>
+                <Text style={styles.buttonText}>Yes!</Text>
+              </View>
+            </TouchableWithoutFeedback>
+
+            <TouchableWithoutFeedback onPress={() => navigation.navigate('Content1')}>
+              <View style={styles.button}>
+                <Text style={styles.buttonText}>No!</Text>
+              </View>
+            </TouchableWithoutFeedback>
+
+            <TouchableWithoutFeedback onPress={() => navigation.navigate('Content1')}>
+              <View style={styles.button}>
+                <Text style={styles.buttonText}>Maybe</Text>
+              </View>
+            </TouchableWithoutFeedback>
+
+          </View>
+        );
+        break;
+
+      case SELECT1:
+        return (
+          <View>
+            <Text style={{marginTop: 24}}>"Hi"</Text>
+            <Progress.Bar progress={this.state.progress} width={300} height={30}/>
+            <Button title='back'
+            onPress={() => this.setState({screen: HOME, progress: 0.5})}/>
+          </View>
+        );
+        break;
+    }
+  }
+}
+
+const styles = StyleSheet.create({
+  button: {
+    marginBottom: 30,
+    width: 260,
+    alignItems: 'center',
+    backgroundColor: '#2196F3'
+  },
+  buttonText: {
+    padding: 20,
+    color: 'white'
+  }
+})
+
+/*
 const HomeScreen = ({ navigation }) => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
     
@@ -82,4 +166,4 @@ const RootNavigator = StackNavigator({
 });
 
 export default RootNavigator;
-
+*/
