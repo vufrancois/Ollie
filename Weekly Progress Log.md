@@ -223,3 +223,25 @@ Risks/Challenges:
 
   the design and the initial app have some discrepancies that need to be reconciled
   there are many ideas floating around - and that's good - but we need to focus on our decided core features
+  
+  
+## Week 11:
+
+Week behind:
+
+  Created Sprint 3 presentation deck
+  Refined product narrative
+  Recorded video of the product narrative
+  Started developing mobile application
+  
+Week ahead:
+
+  Develop a scoring system based on the content assumption
+  Develop UI/UX for seamless educational content consumption
+  Gather frequent feedback
+  Finalize Sprint 3 presentation
+  
+Risks/Challenges:
+
+  Time management
+  Unexpected technical difficulties may arise
