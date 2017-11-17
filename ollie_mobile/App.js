@@ -78,22 +78,31 @@ export default class App extends React.Component {
 
       case SELECT1:
         return (
-          <View style={styles.container}>
-            <Text style={{ marginTop: 34, marginBottom: 1}}>Progress Bar Towards the Free Ride!</Text>
-            <Progress.Bar progress={this.state.progress} width={300} height={30} color='pink'/>
+
+          <View style={{ marginTop: 30, marginBottom: 1, flex: 1}}>
             <View style={{flex: 1}}>
               <View style={{flex: 1}}>
-                <Image 
-                  style={styles.img}
-                  source={require('./assets/Screen2/Waymo_in_car_view.gif')}
-                  onPress={() => this.setState({screen: CONTENT1})}/>
+                <TouchableHighlight onPress={() => this.setState({screen: CONTENT1})}>
+                  <Image 
+                    style={styles.img}
+                    source={require('./assets/Screen2/Waymo_in_car_view.gif')}>
+                    
+                    <View style={styles.backdropView}>
+                      <Text style={styles.chooseOne}>Choose One!</Text>
+                    </View>
+                    
+                    </Image>
+                </TouchableHighlight>
               </View>
+
               <View style={{flex: 1}}>
-                <Image 
-                  style={styles.img}
-                  source={require('./assets/Screen2/Bottom_Image.png')}
-                  resizeMode='stretch'
-                  onPress={() => this.setState({screen: CONTENT1})}/>
+                <TouchableHighlight onPress={() => this.setState({screen: CONTENT1})}>
+                  <Image 
+                    style={styles.img}
+                    source={require('./assets/Screen2/Bottom_Image.png')}
+                    resizeMode='stretch'
+                    />
+                </TouchableHighlight>
               </View>
             </View>
           </View>
@@ -102,24 +111,16 @@ export default class App extends React.Component {
 
       case CONTENT1:
         return (
-          <View>
-            <TouchableHighlight onPress={() => this.setState({screen: HOWTO})}>
-              <Image 
-                source={require('./assets/img1.jpeg')}
-                style={styles.backgroundImage} />
-            </TouchableHighlight>
-          </View>
-        );
-        break;
-
-      case HOWTO:
-        return (
-          <TouchableHighlight onPress={() => this.setState({screen: SELECT2})}>
-            <Image 
-              source={require('./assets/img1.jpeg')}
-              style={styles.backgroundImage}
-               />
-          </TouchableHighlight>
+          <Image 
+              source={require('./assets/Screen_3.png')}
+              style={styles.backgroundImage}>
+            <View>
+              <TouchableHighlight onPress={() => this.setState({screen: SELECT2})}>
+                <Image style={{top:167}}
+                source={require('./assets/Screen2/Waymo_in_car_view.gif')} />
+              </TouchableHighlight>
+            </View>
+          </Image>
         );
         break;
 
@@ -264,7 +265,7 @@ const styles = StyleSheet.create({
   },
   img: {
     alignSelf: 'stretch',
-    height: (Dimensions.get('window').height-65)/2,
+    height: (Dimensions.get('window').height-30)/2,
     width: Dimensions.get('window').width
   },
   canvas: {
@@ -273,6 +274,14 @@ const styles = StyleSheet.create({
     left: 0,
     bottom: 0,
     right: 0,
+  },
+  backdropView: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  chooseOne: {
+    paddingTop: 370,
+    color: 'white',
   }
 });
 
