@@ -1,12 +1,21 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
-import { View, Video, WebView, Button,TouchableWithoutFeedback, StyleSheet, Image, Swiper, Dimensions } from 'react-native';
+import { View, Video, WebView, Button,TouchableWithoutFeedback, StyleSheet, Image, Swiper, Dimensions, TouchableHighlight } from 'react-native';
 import * as Progress from 'react-native-progress';
 import {Text} from 'react-native-elements';
 
 const HOME='home';
 const SELECT1='s1';
 const CONTENT1='c1';
+const HOWTO='instructions';
+const SELECT2='s2';
+const CONTENT2='c2';
+const SELECT3='s3';
+const CONTENT3='c3';
+const SELECT4='s4';
+const CONTENT4='c4';
+const CON='congrats';
+const SHARE='share';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -20,6 +29,8 @@ export default class App extends React.Component {
 
   render() {
     const {screen} = this.state; 
+    var widthDev = Dimensions.get('window').width; //full width
+    var heightDev = Dimensions.get('window').height; //full height
 
     switch(screen) {
       case HOME:
@@ -74,6 +85,53 @@ export default class App extends React.Component {
               <View style={{flex: 1}}>
                 <Image 
                   style={styles.img}
+                  source={require('./assets/Screen2/Waymo_in_car_view.gif')}
+                  onPress={() => this.setState({screen: CONTENT1})}/>
+              </View>
+              <View style={{flex: 1}}>
+                <Image 
+                  style={styles.img}
+                  source={require('./assets/Screen2/Bottom_Image.png')}
+                  resizeMode='stretch'
+                  onPress={() => this.setState({screen: CONTENT1})}/>
+              </View>
+            </View>
+          </View>
+        );
+        break;
+
+      case CONTENT1:
+        return (
+          <View>
+            <TouchableHighlight onPress={() => this.setState({screen: HOWTO})}>
+              <Image 
+                source={require('./assets/img1.jpeg')}
+                style={styles.backgroundImage} />
+            </TouchableHighlight>
+          </View>
+        );
+        break;
+
+      case HOWTO:
+        return (
+          <TouchableHighlight onPress={() => this.setState({screen: SELECT2})}>
+            <Image 
+              source={require('./assets/img1.jpeg')}
+              style={styles.backgroundImage}
+               />
+          </TouchableHighlight>
+        );
+        break;
+
+      case SELECT2:
+        return (
+          <View style={styles.container}>
+            <Text style={{ marginTop: 34, marginBottom: 1}}>Progress Bar Towards the Free Ride!</Text>
+            <Progress.Bar progress={this.state.progress} width={300} height={30} color='pink'/>
+            <View style={{flex: 1}}>
+              <View style={{flex: 1}}>
+                <Image 
+                  style={styles.img}
                   resizeMode="contain"
                   source={require('./assets/img1.jpeg')}
                   onPress={() => this.setState({screen: CONTENT1})}/>
@@ -85,18 +143,99 @@ export default class App extends React.Component {
                   source={require('./assets/img1.jpeg')}/>
               </View>
             </View>
-            <Button title='back'
-            onPress={() => this.setState({screen: HOME, progress: 0.25})}/>
           </View>
         );
         break;
 
-      case CONTENT1:
+      case CONTENT2:
+        return (
+          <Image 
+              source={require('./assets/img1.jpeg')}
+              style={styles.backgroundImage}
+              onPress={() => this.setState({screen: SELECT3})} />
+        );
+        break;
+
+      case SELECT3:
         return (
           <View style={styles.container}>
-            <Button title='back'
-            onPress={() => this.setState({screen: HOME, progress: 0.5})}/>
+            <Text style={{ marginTop: 34, marginBottom: 1}}>Progress Bar Towards the Free Ride!</Text>
+            <Progress.Bar progress={this.state.progress} width={300} height={30} color='pink'/>
+            <View style={{flex: 1}}>
+              <View style={{flex: 1}}>
+                <Image 
+                  style={styles.img}
+                  resizeMode="contain"
+                  source={require('./assets/img1.jpeg')}
+                  onPress={() => this.setState({screen: CONTENT3})}/>
+              </View>
+              <View style={{flex: 1}}>
+                <Image 
+                  style={styles.img}
+                  resizeMode="contain"
+                  source={require('./assets/img1.jpeg')}/>
+              </View>
+            </View>
           </View>
+        );
+        break;
+
+      case CONTENT3:
+        return (
+          <Image 
+              source={require('./assets/img1.jpeg')}
+              style={styles.backgroundImage}
+              onPress={() => this.setState({screen: SELECT4})} />
+        );
+        break;
+
+      case SELECT4:
+        return (
+          <View style={styles.container}>
+            <Text style={{ marginTop: 34, marginBottom: 1}}>Progress Bar Towards the Free Ride!</Text>
+            <Progress.Bar progress={this.state.progress} width={300} height={30} color='pink'/>
+            <View style={{flex: 1}}>
+              <View style={{flex: 1}}>
+                <Image 
+                  style={styles.img}
+                  resizeMode="contain"
+                  source={require('./assets/img1.jpeg')}
+                  onPress={() => this.setState({screen: CONTENT4})}/>
+              </View>
+              <View style={{flex: 1}}>
+                <Image 
+                  style={styles.img}
+                  resizeMode="contain"
+                  source={require('./assets/img1.jpeg')}/>
+              </View>
+            </View>
+          </View>
+        );
+        break;
+
+      case CONTENT4:
+        return (
+          <Image 
+              source={require('./assets/img1.jpeg')}
+              style={styles.backgroundImage}
+              onPress={() => this.setState({screen: CONG})} />
+        );
+        break;
+
+      case CONG:
+        return (
+          <Image 
+              source={require('./assets/img1.jpeg')}
+              style={styles.backgroundImage}
+              onPress={() => this.setState({screen: SHARE})} />
+        );
+        break;
+
+      case SHARE:
+        return (
+          <Image 
+              source={require('./assets/img1.jpeg')}
+              style={styles.backgroundImage} />
         );
         break;
     }
@@ -121,13 +260,19 @@ const styles = StyleSheet.create({
   },
   container: { 
     flex: 1, 
-    alignItems: 'center', 
-    backgroundColor:'rgba(0,0,0,.3)'
+    alignItems: 'center'
   },
   img: {
-    alignSelf: 'center',
-    height: 300,
-    width: 500
+    alignSelf: 'stretch',
+    height: (Dimensions.get('window').height-65)/2,
+    width: Dimensions.get('window').width
+  },
+  canvas: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
   }
 });
 
