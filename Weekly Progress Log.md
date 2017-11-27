@@ -245,3 +245,23 @@ Risks/Challenges:
 
   Time management
   Unexpected technical difficulties may arise
+
+
+## Week 12:
+
+Week behind:
+
+According to the feedback from Sprint 3, we refined our narrative
+
+  Luke and Christy made the mobile app more interactive
+  Vu created poster for our product
+
+Week ahead:
+
+  reflect on our journey
+  final presentation
+
+Risks/Challenges:
+
+final presentation is similar to Sprint 3 presentation; however, we want to make sure that we improve upon the feedback we got (explain why we got where we are)
+
