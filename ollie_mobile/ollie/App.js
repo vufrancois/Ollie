@@ -39,10 +39,13 @@ export default class App extends React.Component {
     switch(screen) {
       case HOME:
         updateIndex = (index) => {
+
           this.setState({index})
         }
 
         goToS1 = () => {
+          // reset
+          this.setState({content1: false, content2: false, content3: false})
           this.setState({screen: SELECT1})
         }
 
@@ -99,9 +102,9 @@ export default class App extends React.Component {
               </TouchableHighlight>
             </View>
             <View style={{flex: 1, alignItems: 'center'}}>
-              <TouchableHighlight onPress={() => this.setState({screen: CONTENT1})}>
+              <TouchableHighlight onPress={() => this.setState({screen: CONTENT1, content2: true})}>
                 <Image 
-                    source={require('./assets/Screen2/Bottom_Image.png')}
+                    source={require('./assets/v2/Screen3_Bottom_Image.png')}
                     style={styles.img}>
                     <Text style={styles.chooseOneBottom}>Choose One!</Text>
                 </Image>
@@ -112,59 +115,127 @@ export default class App extends React.Component {
         break;
 
       case CONTENT1:
-        return (
-          
-          <Image 
-              source={require('./assets/Screen_3.png')}
-              style={styles.backgroundImage}>
-            <View>
+        if (this.state.content1 === true) {
+          return (
+            
+            <Image 
+                source={require('./assets/Screen_3.png')}
+                style={styles.backgroundImage}>
+              <View>
+                <TouchableHighlight onPress={() => this.setState({screen: SELECT2})}>
+                  <Image style={{top:167}}
+                  source={require('./assets/Screen2/Waymo_in_car_view.gif')} />
+                </TouchableHighlight>
+              </View>
+            </Image>
+          );
+        } else {
+          return (
+            <View style={{flex: 1, alignItems: 'center'}}>
               <TouchableHighlight onPress={() => this.setState({screen: SELECT2})}>
-                <Image style={{top:167}}
-                source={require('./assets/Screen2/Waymo_in_car_view.gif')} />
+                <Image 
+                    source={require('./assets/Gif3.gif')}
+                    style={{width: widthDev, height: heightDev}}>
+                </Image>
               </TouchableHighlight>
             </View>
-          </Image>
-        );
+          );
+        }
         break;
 
       case SELECT2:
-        return (
-          <View style={{flex: 1, alignItems: 'center'}}>
+        if (this.state.content1 === true) {
+          return (
             <View style={{flex: 1, alignItems: 'center'}}>
-              <TouchableHighlight onPress={() => this.setState({screen: CONTENT2})}>
-                <Image
-                    source={require('./assets/v2/Screen3_Top_Image.png')}
-                    style={styles.img}>
-                     <Text style={styles.chooseOneTop}>Choose One!</Text>
-                </Image>
-              </TouchableHighlight>
-            </View>
+              <View style={{flex: 1, alignItems: 'center'}}>
+                <TouchableHighlight onPress={() => this.setState({screen: CONTENT2, content3: true})}>
+                  <Image
+                      source={require('./assets/v2/Screen8_Top_Image.png')}
+                      style={styles.img}>
+                       <Text style={styles.chooseOneTop}>Choose One!</Text>
+                  </Image>
+                </TouchableHighlight>
+              </View>
 
-            <View style={{flex: 1, alignItems: 'center'}}>
-              <TouchableHighlight onPress={() => this.setState({screen: CONTENT2})}>
-                <Image
-                    source={require('./assets/v2/Screen3_Bottom_Image.png')}
-                    style={styles.img}>
-                    <Text style={styles.chooseOneBottom}>Choose One!</Text>
-                </Image>
-              </TouchableHighlight>
+              
+              <View style={{flex: 1, alignItems: 'center'}}>
+                <TouchableHighlight onPress={() => this.setState({screen: CONTENT2, content2: true})}>
+                  <Image
+                      source={require('./assets/Gif3.gif')}
+                      style={styles.img}>
+                      <Text style={styles.chooseOneBottom}>Choose One!</Text>
+                  </Image>
+                </TouchableHighlight>
+              </View>
             </View>
+            );
+          } else {
+            return (
+              <View style={{flex: 1, alignItems: 'center'}}>
+                <View style={{flex: 1, alignItems: 'center'}}>
+                  <TouchableHighlight onPress={() => this.setState({screen: CONTENT2, content3: true})}>
+                    <Image
+                        source={require('./assets/v2/Screen8_Top_Image.png')}
+                        style={styles.img}>
+                         <Text style={styles.chooseOneTop}>Choose One!</Text>
+                    </Image>
+                  </TouchableHighlight>
+                </View>
+                <View style={{flex: 1, alignItems: 'center'}}>
+                <TouchableHighlight 
+                  onPress={() => this.setState({screen: CONTENT2, content1: true})}>
+                  <Image 
+                      source={require('./assets/Screen2/Waymo_in_car_view.gif')}
+                      style={styles.img}>
+                      <Text style={styles.chooseOneBottom}>Choose One!</Text>
+                  </Image>
 
-          </View>
-        );
+                </TouchableHighlight>
+              </View>
+            </View>
+            );
+          };
         break;
 
       case CONTENT2:
-        return (
-          <View style={{flex: 1, alignItems: 'center'}}>
-            <TouchableHighlight onPress={() => this.setState({screen: SELECT4})}>
+        if (this.state.content1 === false) {
+          return (
+            
+            <Image 
+                source={require('./assets/Screen_3.png')}
+                style={styles.backgroundImage}>
+              <View>
+                <TouchableHighlight onPress={() => this.setState({screen: SELECT2})}>
+                  <Image style={{top:167}}
+                  source={require('./assets/Screen2/Waymo_in_car_view.gif')} />
+                </TouchableHighlight>
+              </View>
+            </Image>
+          );
+        } else if (this.state.content3 === true) {
+          return (
+            <View style={{flex: 1, alignItems: 'center'}}>
+
+            <TouchableHighlight onPress={() => this.setState({screen: SELECT3})}>
               <Image 
-                  source={require('./assets/Gif3.gif')}
+                  source={require('./assets/Screen9.jpg')}
                   style={{width: widthDev, height: heightDev}}>
               </Image>
             </TouchableHighlight>
           </View>
-        );
+          );
+        } else {
+          return (
+            <View style={{flex: 1, alignItems: 'center'}}>
+              <TouchableHighlight onPress={() => this.setState({screen: SELECT3})}>
+                <Image 
+                    source={require('./assets/Gif3.gif')}
+                    style={{width: widthDev, height: heightDev}}>
+                </Image>
+              </TouchableHighlight>
+            </View>
+          );
+        }
         break;
 
       case SELECT3:
