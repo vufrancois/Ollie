@@ -23,7 +23,10 @@ export default class App extends React.Component {
 
     this.state = {
       screen: HOME,
-      progress: 0
+      progress: 0,
+      content1: false,
+      content2: false,
+      content3: false
     }
   }
   
@@ -84,12 +87,26 @@ export default class App extends React.Component {
       case SELECT1:
         return (
           <View style={{flex: 1, alignItems: 'center'}}>
-            <TouchableHighlight onPress={() => this.setState({screen: CONTENT1})}>
-              <Image 
-                  source={require('./assets/Screen2.jpg')}
-                  style={{width: widthDev, height: heightDev}}>
-              </Image>
-            </TouchableHighlight>
+            <View style={{flex: 1, alignItems: 'center'}}>
+              <TouchableHighlight 
+                onPress={() => this.setState({screen: CONTENT1, content1: true})}>
+                <Image 
+                    source={require('./assets/Screen2/Waymo_in_car_view.gif')}
+                    style={styles.img}>
+                    <Text style={styles.chooseOneTop}>Choose One!</Text>
+                </Image>
+
+              </TouchableHighlight>
+            </View>
+            <View style={{flex: 1, alignItems: 'center'}}>
+              <TouchableHighlight onPress={() => this.setState({screen: CONTENT1})}>
+                <Image 
+                    source={require('./assets/Screen2/Bottom_Image.png')}
+                    style={styles.img}>
+                    <Text style={styles.chooseOneBottom}>Choose One!</Text>
+                </Image>
+              </TouchableHighlight>
+            </View>
           </View>
         );
         break;
@@ -113,12 +130,26 @@ export default class App extends React.Component {
       case SELECT2:
         return (
           <View style={{flex: 1, alignItems: 'center'}}>
-            <TouchableHighlight onPress={() => this.setState({screen: CONTENT2})}>
-              <Image 
-                  source={require('./assets/Screen4.jpg')}
-                  style={{width: widthDev, height: heightDev}}>
-              </Image>
-            </TouchableHighlight>
+            <View style={{flex: 1, alignItems: 'center'}}>
+              <TouchableHighlight onPress={() => this.setState({screen: CONTENT2})}>
+                <Image
+                    source={require('./assets/v2/Screen3_Top_Image.png')}
+                    style={styles.img}>
+                     <Text style={styles.chooseOneTop}>Choose One!</Text>
+                </Image>
+              </TouchableHighlight>
+            </View>
+
+            <View style={{flex: 1, alignItems: 'center'}}>
+              <TouchableHighlight onPress={() => this.setState({screen: CONTENT2})}>
+                <Image
+                    source={require('./assets/v2/Screen3_Bottom_Image.png')}
+                    style={styles.img}>
+                    <Text style={styles.chooseOneBottom}>Choose One!</Text>
+                </Image>
+              </TouchableHighlight>
+            </View>
+
           </View>
         );
         break;
@@ -128,7 +159,7 @@ export default class App extends React.Component {
           <View style={{flex: 1, alignItems: 'center'}}>
             <TouchableHighlight onPress={() => this.setState({screen: SELECT4})}>
               <Image 
-                  source={require('./assets/Screen5.jpg')}
+                  source={require('./assets/Gif3.gif')}
                   style={{width: widthDev, height: heightDev}}>
               </Image>
             </TouchableHighlight>
@@ -144,7 +175,7 @@ export default class App extends React.Component {
                 <TouchableHighlight onPress={() => this.setState({screen: CONTENT3})}>
                   <Image 
                     style={styles.img}
-                    source={require('./assets/Screen6_Top.png')}>
+                    source={require('./assets/screen6top.png')}>
                     </Image>
                 </TouchableHighlight>
               </View>
@@ -180,12 +211,26 @@ export default class App extends React.Component {
       case SELECT4:
         return (
           <View style={{flex: 1, alignItems: 'center'}}>
-            <TouchableHighlight onPress={() => this.setState({screen: CONTENT4})}>
-              <Image 
-                  source={require('./assets/Screen8.jpg')}
-                  style={{width: widthDev, height: heightDev}}>
-              </Image>
-            </TouchableHighlight>
+            <View style={{flex: 1, alignItems: 'center'}}>
+              <TouchableHighlight onPress={() => this.setState({screen: CONTENT4})}>
+                <Image 
+                    source={require('./assets/v2/Screen8_Top_Image.png')}
+                    style={styles.img}>
+                    <Text style={styles.chooseOneTop}>  Pick One!</Text>
+                </Image>
+              </TouchableHighlight>
+            </View>
+
+            <View style={{flex: 1, alignItems: 'center'}}>
+              <TouchableHighlight onPress={() => this.setState({screen: CONTENT4})}>
+                <Image 
+                    source={require('./assets/v2/Screen8_Bottom_Image.png')}
+                    style={styles.img}>
+                    <Text style={styles.chooseOneBottom}>  Pick One!</Text>
+                </Image>
+              </TouchableHighlight>
+            </View>
+
           </View>
         );
         break;
@@ -193,6 +238,7 @@ export default class App extends React.Component {
       case CONTENT4:
         return (
           <View style={{flex: 1, alignItems: 'center'}}>
+
             <TouchableHighlight onPress={() => this.setState({screen: SELECT3})}>
               <Image 
                   source={require('./assets/Screen9.jpg')}
@@ -287,7 +333,7 @@ const styles = StyleSheet.create({
   },
   img: {
     alignSelf: 'stretch',
-    height: (Dimensions.get('window').height-30)/2,
+    height: (Dimensions.get('window').height)/2,
     width: Dimensions.get('window').width
   },
   canvas: {
@@ -308,7 +354,7 @@ const styles = StyleSheet.create({
     fontSize: 60
   },
   chooseOneBottom: {
-    marginTop: -34,
+    marginTop: -36,
     color: 'white',
     fontWeight: 'bold',
     fontSize: 60
