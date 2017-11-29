@@ -1,0 +1,34 @@
+  name: Team Ollie
+  logo: ollie_logo.png
+how_might_we: How might we create a program to ease people into trusting self-driving cars?
+
+product_narrative: |
+So the concept of ollie is crafted around getting people to experience their first ride in a self-driving car by building awareness by providing content, creating a segue to access by offering a free ride, making it an fun experience for the user, but also making the the platform actionable for self-driving car companies to better understand their end consumer by providing data and insights to these companies on the user.
+Ollie is not a self driving car, nor AI, but will be in places to help people ease into trusting self driving cars. Ollie's goal is to be the Visa of marketing self-driving cars.
+team:
+  picture: IMG_3402.jpg
+
+  roster:
+    - name: Vu Francois
+      email: vgf8@cornell.edu
+      picture: TEAM MEMBER 1 PHOTO FILE (Copy the and paste the file name here of your upload here. e.g. imagename.jpg)
+    - name: Jivesh Tolani
+      email: TEAM MEMBER 2 EMAIL
+      picture: TEAM MEMBER 2 PHOTO FILE (Copy the and paste the file name here of your upload here. e.g. imagename.jpg)
+    - name: Luke Anh
+      email: TEAM MEMBER 3 EMAIL
+      picture: TEAM MEMBER 3 PHOTO FILE (Copy the and paste the file name here of your upload here. e.g. imagename.jpg)
+    - name: Christy Cui
+      email: TEAM MEMBER 4 EMAIL
+      picture: TEAM MEMBER 4 PHOTO FILE (Copy the and paste the file name here of your upload here. e.g. imagename.jpg)
+    - name: Heidi Fan
+      email: TEAM MEMBER 5 EMAIL
+      picture: TEAM MEMBER 5 PHOTO FILE (Copy the and paste the file name here of your upload here. e.g. imagename.jpg)
+
+assets:
+- title: Sprint 1
+  url: https://docs.google.com/a/cornell.edu/presentation/d/1kSRCbjge264qD0EvAC0___-OwTzYMCGfHuk6xpN75zw/edit?usp=sharing
+- title: Sprint 2
+  url: https://drive.google.com/open?id=1LnRcpUEVPlbAfufsUbmHyoSxAJSXy7hW-QhzdBO-KPg
+- title: Sprint 3
+  url: https://docs.google.com/a/cornell.edu/presentation/d/1Y2t7McKzTbRQP2M6jNuag3jgBuMmAPkRDB3NLnHfHuc/edit?usp=sharing
