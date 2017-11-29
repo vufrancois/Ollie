@@ -11,19 +11,19 @@ team:
   roster:
     - name: Vu Francois
       email: vgf8@cornell.edu
-      picture: TEAM MEMBER 1 PHOTO FILE (Copy the and paste the file name here of your upload here. e.g. imagename.jpg)
+      picture: vu.jpg
     - name: Jivesh Tolani
       email: jrt274@cornell.edu
-      picture: TEAM MEMBER 2 PHOTO FILE (Copy the and paste the file name here of your upload here. e.g. imagename.jpg)
+      picture: jivesh.jpg
     - name: Luke Anh
       email: la393@cornell.edu
-      picture: TEAM MEMBER 3 PHOTO FILE (Copy the and paste the file name here of your upload here. e.g. imagename.jpg)
+      picture: luke.jpg
     - name: Christy Cui
       email: Thc935@cornell.edu
       picture: TEAM MEMBER 4 PHOTO FILE (Copy the and paste the file name here of your upload here. e.g. imagename.jpg)
     - name: Heidi Fan
       email: hf322@cornelle.du
-      picture: TEAM MEMBER 5 PHOTO FILE (Copy the and paste the file name here of your upload here. e.g. imagename.jpg)
+      picture: heidi.jpg
 
 assets:
 - title: Sprint 1
